@@ -23,7 +23,7 @@ pipeline {
         }
 		stage("RUN Docker images") {
             steps {
-			sh 'ssh rymar64@40.124.44.223 \'sudo docker run -d -p 90:80 deco5\''
+			sh 'ssh rymar64@40.124.44.223 \'sudo docker run -d -p 99:80 deco5\''
             }
         }		
     }	
