@@ -13,17 +13,17 @@ pipeline {
     stages {
         stage("Create Docker images") {
             steps {
-			sh 'ssh rymar64@13.72.67.146 \'sudo rm -rf html5 && sudo git clone https://github.com/rymar24/html5.git\' '
+			sh 'ssh rymar64@40.124.44.223 \'sudo rm -rf html5 && sudo git clone https://github.com/rymar24/html5.git\' '
             }
         }
 		stage("Build Docker images") {
             steps {
-			sh 'ssh rymar64@13.72.67.146 \'cd html5 && sudo docker build -t deco5 . \''
+			sh 'ssh rymar64@40.124.44.223 \'cd html5 && sudo docker build -t deco5 . \''
             }
         }
 		stage("RUN Docker images") {
             steps {
-			sh 'ssh rymar64@13.72.67.146 \'sudo docker run -d -p 90:80 deco5\''
+			sh 'ssh rymar64@40.124.44.223 \'sudo docker run -d -p 90:80 deco5\''
             }
         }		
     }	
